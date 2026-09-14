@@ -1,10 +1,12 @@
 {
   "schema_version": 1,
   "episode_id": "E001",
-  "current_stage": "EMOTION_PREVIZ_REVIEW",
+  "current_stage": "EMOTION_PREVIZ_REVISION",
   "owner_role": "STUDIO_PRODUCER",
-  "next_role": "CONTINUITY_SUPERVISOR",
-  "next_action": "Review the E001 Emotion/Spatial Previz and approve or reject it",
-  "blockers": [],
-  "updated_at": "2026-09-14T16:25:00.959Z"
+  "next_role": "STUDIO_PRODUCER",
+  "next_action": "Revise CAM_CANDIDATE_HOME_BED_PATH_MEDIUM geometry and Cuts 5–8 spatial continuity, then resubmit Emotion/Spatial Previz for review",
+  "blockers": [
+    "episodes/E001/emotion-previz.md — Spatial scope and Cuts 5–8: CAM_CANDIDATE_HOME_BED_PATH_MEDIUM cites CAM_HOME_A/C together without one fixed camera position, facing direction, or frame/visibility bounds. This conflicts with continuity/sets/SPATIAL_CONTINUITY.md, which requires a new camera position and sightline to be defined on the floorplan before asset generation. Required: choose one official camera as the sole geometric anchor; define the E001-only candidate's position, facing, framing, visible directional anchors, and Cut 4→5 screen-direction continuity; retain mirror prohibition and do not register an official reusable Camera ID."
+  ],
+  "updated_at": "2026-09-14T16:31:04.152Z"
 }
