@@ -3,13 +3,13 @@
   "episode_id": "E001",
   "approvals": {
     "brief": {
-      "status": "PENDING_REVIEW",
-      "reviewer": null,
-      "reviewed_at": null,
+      "status": "APPROVED",
+      "reviewer": "ㅎ (Owner/Showrunner)",
+      "reviewed_at": "2026-09-14T13:56:36Z",
       "blocking_issues": []
     },
     "script": {
-      "status": "NOT_STARTED",
+      "status": "PENDING_REVIEW",
       "reviewer": null,
       "reviewed_at": null,
       "blocking_issues": []
