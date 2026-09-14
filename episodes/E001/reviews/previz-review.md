@@ -59,3 +59,44 @@ Emotion acting, timing, dialogue, Character constraints, Set/Prop references, te
 ## Gate status
 
 The Emotion/Spatial Previz is rejected pending the single spatial correction above. No image, background, action frame, audio, or `edit.json` asset may be generated. After revision, return Previz to `PENDING_REVIEW` and request Continuity review again.
+
+---
+
+## Re-review 1
+
+- Decision: **REJECTED**
+- Reviewer: Continuity Supervisor (Codex)
+- Reviewed at: 2026-09-14T17:06:18.828Z
+- Reviewed commit: `cdcf1cbe32be8a177e7f465594144533418c55d8`
+- Main / Set Registry baseline: `1e59b4a7790e46cb1e3b2e92477b16d43b3a88ff`
+- Asset production: **BLOCKED**
+
+### Resolution check against the first rejection
+
+| Required revision | Result |
+|---|---|
+| Choose one geometric anchor | PASS — `CAM_HOME_C` is now explicitly selected. |
+| Define camera position, facing, and framing | PASS — position, 15–20° facing relation, crop, and frame bounds are specified. |
+| Define visible anchors and subject/prop placement | PASS — bed, central path/rug, Mongi, and phone placement are specified. |
+| Preserve Cut 4→5 and Cuts 5–8 screen geometry | PASS — right-bed to center/down-left landing and locked geometry through Cut 8 are specified. |
+| Keep mirror/horizontal flip prohibited | PASS |
+| Keep Candidate E001-only and unregistered | PASS |
+
+### Remaining blocking inconsistency
+
+The revised spatial scope, baseline view, Camera column, and production note correctly use `CAM_HOME_C` as the sole geometry. However, the cut-level **Required visual reference** cells still contain stale plural references:
+
+- Cut 5 ends with `Home View A/C 및 중앙 통로`.
+- Cut 8 ends with `Home View A/C, Soft Organic Bubble`.
+
+Those fields are production inputs. Keeping `A/C` there conflicts with the sole-camera correction and can cause View A and View C to be mixed during image generation.
+
+### Required correction
+
+1. In the Cut 5 required-reference cell, replace the stale `Home View A/C` wording with **Home View C only**.
+2. In the Cut 8 required-reference cell, replace the stale `Home View A/C` wording with **Home View C only**.
+3. If View A remains in the general Official reference map, label it only as a non-camera structural cross-check; it must not be used as the geometric or generation reference for Cuts 5–8.
+4. Do not change `SET_REGISTRY.yaml`, and do not register either Camera Candidate as an official reusable Camera ID.
+
+All emotion, timing, Character, Prop/TEMP, mirror prohibition, and corrected camera-geometry content otherwise pass. After this textual consistency correction, return Previz to `PENDING_REVIEW` for final re-review. No assets may be generated before approval.
+
