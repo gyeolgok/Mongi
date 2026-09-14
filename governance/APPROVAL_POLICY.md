@@ -11,18 +11,26 @@
 
 ## 필수 게이트
 
+- Brief 작성 후 Owner의 `BRIEF_APPROVED`
+- Script 작성 후 Continuity Supervisor의 `SCRIPT_APPROVED`
+- Emotion Previz 작성 후 Continuity Supervisor의 `PREVIZ_APPROVED`
+- 최종 자산 제작 후 Continuity Supervisor의 `ASSET_APPROVED`
+- 게시 전 Owner 또는 위임 운영 담당의 `FINAL_APPROVED`
+
 Renderer Preflight는 에피소드 ZIP 루트의 `approval.json`에서 다음 두 승인을 자동 검사한다.
 
 - `approvals.script.status == APPROVED`
 - `approvals.assets.status == APPROVED`
 
-각 승인에는 `reviewer`와 ISO 8601 형식의 `reviewed_at`이 있어야 한다. `episode_id`는 `edit.json`의 `project.id`와 일치해야 한다.
-
-게시 전에는 `approvals.final.status == APPROVED`여야 한다. 이는 채널 운영 단계에서 확인하며 Renderer 성공이 게시 승인을 의미하지 않는다.
+`PREVIZ_APPROVED`는 고비용 자산 제작을 막는 운영 게이트이며 Renderer의 기술 게이트를 대체하지 않는다. 각 승인에는 `reviewer`와 ISO 8601 형식의 `reviewed_at`이 있어야 한다. `episode_id`는 `edit.json`의 `project.id`와 일치해야 한다.
 
 ## 권한 분리
 
+- Brief 작성: Story Writer
+- Brief 승인: Owner
 - Script 승인: Continuity Supervisor
+- Emotion Previz 작성: Studio Producer
+- Emotion Previz 승인: Continuity Supervisor
 - Asset 승인: Continuity Supervisor
 - Final 승인: Owner 또는 Owner가 명시적으로 위임한 운영 담당
 - Canon 변경 승인과 override: Owner만 가능

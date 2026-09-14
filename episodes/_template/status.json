@@ -1,11 +1,10 @@
 {
   "schema_version": 1,
   "episode_id": "EXXX",
-  "current_stage": "BRIEF",
-  "owner_role": "CHANNEL_OPERATIONS",
+  "current_stage": "BRIEF_DRAFT",
+  "owner_role": "STORY_WRITER",
   "next_role": "STORY_WRITER",
-  "next_action": "Complete the episode brief",
+  "next_action": "Draft brief.md and request Owner review",
   "blockers": [],
   "updated_at": null
 }
-

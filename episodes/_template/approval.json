@@ -4,6 +4,7 @@
   "approvals": {
     "brief": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
     "script": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
+    "previz": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
     "assets": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
     "render": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
     "final": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []}
@@ -15,4 +16,3 @@
     "scope": null
   }
 }
-

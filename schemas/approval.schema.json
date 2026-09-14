@@ -8,11 +8,12 @@
     "episode_id": {"type": "string", "pattern": "^E[0-9]{3,}$"},
     "approvals": {
       "type": "object",
-      "required": ["brief", "script", "assets", "render", "final"],
+      "required": ["brief", "script", "previz", "assets", "render", "final"],
       "additionalProperties": false,
       "properties": {
         "brief": {"$ref": "#/$defs/gate"},
         "script": {"$ref": "#/$defs/gate"},
+        "previz": {"$ref": "#/$defs/gate"},
         "assets": {"$ref": "#/$defs/gate"},
         "render": {"$ref": "#/$defs/gate"},
         "final": {"$ref": "#/$defs/gate"}
@@ -37,9 +38,8 @@
         "status": {"enum": ["NOT_STARTED", "IN_PROGRESS", "PENDING_REVIEW", "APPROVED", "REJECTED", "BLOCKED"]},
         "reviewer": {"type": ["string", "null"]},
         "reviewed_at": {"type": ["string", "null"]},
-        "blocking_issues": {"type": "array", "items": {"type": ["string", "object"]}}
+        "blocking_issues": {"type": "array", "items": {"type": ["string", "object"]}
       }
     }
   }
 }
-
