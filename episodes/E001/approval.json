@@ -9,9 +9,9 @@
       "blocking_issues": []
     },
     "script": {
-      "status": "PENDING_REVIEW",
-      "reviewer": null,
-      "reviewed_at": null,
+      "status": "APPROVED",
+      "reviewer": "Continuity Supervisor (Codex)",
+      "reviewed_at": "2026-09-14T14:05:04.936Z",
       "blocking_issues": []
     },
     "assets": {
