@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "episode_id": "E001",
+  "current_stage": "SCRIPT",
+  "owner_role": "STORY_WRITER",
+  "next_role": "STORY_WRITER",
+  "next_action": "Write script.md from the approved brief, then set script review to PENDING_REVIEW",
+  "blockers": [],
+  "updated_at": "2026-09-14T13:32:52.942Z"
+}
