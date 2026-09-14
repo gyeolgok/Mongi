@@ -24,8 +24,12 @@ def inspect_package(zip_path: Path):
         with zipfile.ZipFile(zip_path,'r') as zf: _safe_extract(zf,stage)
         edit=stage/'edit.json'
         if not edit.exists(): raise PackageError('ZIP root must contain edit.json')
+        approval=stage/'approval.json'
+        if not approval.exists(): raise PackageError('ZIP root must contain approval.json')
         try: data=json.loads(edit.read_text(encoding='utf-8-sig'))
         except Exception as e: raise PackageError(f'Invalid edit.json: {e}')
+        try: json.loads(approval.read_text(encoding='utf-8-sig'))
+        except Exception as e: raise PackageError(f'Invalid approval.json: {e}')
         pid=str(data.get('project',{}).get('id','')).strip()
         if not pid: raise PackageError('edit.json project.id is required')
         return pid,data

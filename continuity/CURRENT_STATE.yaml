@@ -1,0 +1,21 @@
+schema_version: 1
+updated_at: "2026-09-14"
+canon_snapshot:
+  character: "1.0"
+  personality: "1.0"
+  voice: "1.0"
+  world: "1.0"
+  home: "1.0-final-v3"
+  shorts_edit: "1.9-consolidated"
+mongi:
+  story_phase: "졸업 직전"
+  employment_state: "취업 준비생"
+  residence: "도담시 소담동 원룸"
+  fixed_supporting_characters: []
+  dream_symbol: "1층 작은 가게와 2층 집"
+production:
+  latest_official_episode: null
+  active_episodes: []
+  next_episode_id: "E001"
+open_decisions: []
+

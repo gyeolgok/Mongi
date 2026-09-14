@@ -1,4 +1,6 @@
-Mongi Renderer V1.6.1 APP PATCH
+HISTORICAL — Mongi Renderer V1.6.1 APP PATCH
+
+Current behavior is defined by Renderer V1.7.0 / Edit Lock V1.9.
 
 Install
 1. Close Renderer if running.

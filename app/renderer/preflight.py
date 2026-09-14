@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from .config import (
     SUPPORTED_CAMERA, SUPPORTED_TRANSITIONS, SUPPORTED_TEXT_TYPES,
@@ -9,6 +10,31 @@ from .utils import resolve_project_path, find_asset
 
 
 LEGACY_SFX_KEYS = {"scroll", "discover", "flop", "success", "pop_soft"}
+REQUIRED_RENDER_APPROVALS = ("script", "assets")
+
+
+def _validate_approvals(project_dir: Path, project_id: str):
+    path = project_dir / "approval.json"
+    if not path.exists():
+        raise PreflightError("Missing approval.json: SCRIPT_APPROVED and ASSET_APPROVED are required")
+    try:
+        approval = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise PreflightError(f"Invalid approval.json: {exc}") from exc
+    if str(approval.get("episode_id", "")).strip() != str(project_id):
+        raise PreflightError("approval.json episode_id must match project.id")
+    gates = approval.get("approvals")
+    if not isinstance(gates, dict):
+        raise PreflightError("approval.json approvals must be an object")
+    for gate in REQUIRED_RENDER_APPROVALS:
+        record = gates.get(gate)
+        if not isinstance(record, dict) or record.get("status") != "APPROVED":
+            raise PreflightError(f"{gate.upper()}_APPROVED is required before rendering")
+        if not str(record.get("reviewer", "")).strip():
+            raise PreflightError(f"approval.json approvals.{gate}.reviewer is required")
+        if not str(record.get("reviewed_at", "")).strip():
+            raise PreflightError(f"approval.json approvals.{gate}.reviewed_at is required")
+    return approval
 
 
 def _cursor_click_times(cut):
@@ -37,6 +63,7 @@ def run_preflight(edit: dict, edit_path: Path):
     if not isinstance(project,dict): raise PreflightError("Missing object: project")
     for key in ("id","title","format","resolution","fps"):
         if key not in project: raise PreflightError(f"Missing project.{key}")
+    _validate_approvals(project_dir, project["id"])
     res=project["resolution"]
     if not isinstance(res,dict) or "width" not in res or "height" not in res: raise PreflightError("project.resolution must contain width and height")
     _num(res["width"],"project.resolution.width",1); _num(res["height"],"project.resolution.height",1); _num(project["fps"],"project.fps",1)
@@ -53,6 +80,14 @@ def run_preflight(edit: dict, edit_path: Path):
         raise PreflightError("Final End Card requires an end_message text item")
     if not any(str(t.get("text", "")).strip() for t in end_messages):
         raise PreflightError("Final End Card end_message must not be empty")
+    end_camera = (final_cut.get("camera") or {}).get("preset", "STATIC")
+    if end_camera != "STATIC":
+        raise PreflightError("End Card camera must be STATIC (Edit Lock V1.9)")
+    if final_cut.get("actions"):
+        raise PreflightError("End Card actions are not allowed by the V1.9 default contract")
+    end_transition = (final_cut.get("transition_out") or {}).get("type", "CUT")
+    if end_transition not in {"CUT", "CROSSFADE", "FADE_IN", "FADE_OUT"}:
+        raise PreflightError("End Card only supports subtle fade-family transitions or CUT")
     seen=set(); total=0.0
     for idx,cut in enumerate(cuts):
         pfx=f"cuts[{idx}]"
@@ -69,6 +104,10 @@ def run_preflight(edit: dict, edit_path: Path):
         if transition not in SUPPORTED_TRANSITIONS: raise PreflightError(f"Unsupported transition in cut {cut['id']}: {transition}")
         occupied=[]
         for t in cut.get("text",[]):
+            if t.get("type") in {"dialogue", "thought"}:
+                raise PreflightError(
+                    f"{t.get('type')} must be baked into the source image; Renderer post-compositing is retired in V1.9 (cut {cut['id']})"
+                )
             if t.get("type") not in SUPPORTED_TEXT_TYPES: raise PreflightError(f"Unsupported text type in cut {cut['id']}: {t.get('type')}")
             if t.get("type") == "end_message" and cut.get("type") != "end_card":
                 raise PreflightError(f"end_message is only allowed in an end_card cut (cut {cut['id']})")
@@ -79,7 +118,7 @@ def run_preflight(edit: dict, edit_path: Path):
             _num(a,f"cut {cut['id']} text.appear_at",0)
             anim=str(t.get("animation","")).upper()
             if anim=="TYPEWRITER":
-                _num(t.get("chars_per_second",12),f"cut {cut['id']} text.chars_per_second",1)
+                raise PreflightError(f"TYPEWRITER is retired by Edit Lock V1.9 (cut {cut['id']})")
             if a>cut["duration"]: raise PreflightError(f"Text appear_at exceeds cut duration in cut {cut['id']}")
             if d is not None:
                 _num(d,f"cut {cut['id']} text.disappear_at",0)

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "episode_id": "EXXX",
+  "current_stage": "BRIEF",
+  "owner_role": "CHANNEL_OPERATIONS",
+  "next_role": "STORY_WRITER",
+  "next_action": "Complete the episode brief",
+  "blockers": [],
+  "updated_at": null
+}
+

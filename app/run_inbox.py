@@ -9,7 +9,7 @@ APP=ROOT/'app'
 def main():
     packages=find_inbox_packages(ROOT)
     if not packages:
-        print('Mongi Renderer V1.6.5')
+        print('Mongi Renderer V1.7.0')
         print('\n✗ inbox/에 에피소드 ZIP이 없습니다.')
         print('  제작실에서 받은 E01_assets.zip 같은 파일을 inbox/에 넣고 다시 실행하세요.')
         return 1

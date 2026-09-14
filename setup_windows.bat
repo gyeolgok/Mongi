@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-echo Mongi Renderer V1.6 - Windows Setup
+echo Mongi Renderer V1.7.0 - Windows Setup
 where python >nul 2>nul
 if errorlevel 1 (
   echo [!] Python not found.

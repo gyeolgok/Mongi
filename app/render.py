@@ -26,7 +26,7 @@ def main():
     ap.add_argument("--force",action="store_true",help="Ignore cut cache")
     ap.add_argument("--open-output",action="store_true",help="Open output folder when done")
     args=ap.parse_args(); edit_path=Path(args.edit_json).resolve()
-    print("Mongi Renderer V1.6.9\n")
+    print("Mongi Renderer V1.7.0 / Edit Lock V1.9\n")
     try:
         require_ffmpeg(); edit=load_json(edit_path); result=run_preflight(edit,edit_path)
     except PreflightError as e:

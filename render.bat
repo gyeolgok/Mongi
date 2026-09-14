@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-echo Mongi Renderer V1.6
+echo Mongi Renderer V1.7.0
 python app\bootstrap.py
 if errorlevel 1 (
   echo.

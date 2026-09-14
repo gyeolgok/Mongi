@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "episode_id": "EXXX",
+  "approvals": {
+    "brief": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
+    "script": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
+    "assets": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
+    "render": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []},
+    "final": {"status": "NOT_STARTED", "reviewer": null, "reviewed_at": null, "blocking_issues": []}
+  },
+  "override": {
+    "approved_by_owner": false,
+    "reason": null,
+    "approved_at": null,
+    "scope": null
+  }
+}
+

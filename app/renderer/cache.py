@@ -3,7 +3,7 @@ from pathlib import Path
 
 # Bump whenever renderer behavior changes in a way that can alter cached cut video.
 # This prevents old cached cuts from surviving camera/text-renderer hotfixes.
-CACHE_SCHEMA = "renderer-1.6.9-soft-organic-bubble"
+CACHE_SCHEMA = "renderer-1.7.0-edit-lock-1.9"
 
 
 def file_sig(path: Path):

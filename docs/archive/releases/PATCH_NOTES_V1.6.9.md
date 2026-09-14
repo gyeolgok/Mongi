@@ -1,4 +1,6 @@
-# Mongi Renderer V1.6.9 — Soft Organic Bubble Patch
+# Historical: Mongi Renderer V1.6.9 — Soft Organic Bubble Patch
+
+> 보관용 이전 패치 기록이다. 현재 Renderer V1.7.0 / Edit Lock V1.9에서는 dialogue/thought Renderer 합성이 폐기되었다.
 
 Apply over the working V1.6.8 Renderer root.
 
