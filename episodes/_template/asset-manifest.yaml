@@ -1,0 +1,16 @@
+schema_version: 1
+episode_id: "EXXX"
+set_registry_commit: null
+assets: []
+# Example:
+# - asset_id: "E001_C01_BASE"
+#   cut_id: "C01"
+#   set_ref: "SET_HOME_001@1.0"
+#   camera_ref: "CAM_HOME_A"
+#   prop_refs: ["PROP_HOME_BED_001", "TEMP:E001_PHONE"]
+#   mirror_allowed: false
+#   visual_reference_files:
+#     - "Mongi-Home-Floorplan-V1.0-Final-v2.png"
+#     - "Mongi-Home-View-A-Final-v2.png"
+#   library_file: null
+#   status: "PLANNED"
