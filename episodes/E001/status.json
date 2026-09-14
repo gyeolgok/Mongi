@@ -4,7 +4,7 @@
   "current_stage": "EMOTION_PREVIZ_REVIEW",
   "owner_role": "STUDIO_PRODUCER",
   "next_role": "CONTINUITY_SUPERVISOR",
-  "next_action": "Review emotion-previz.md and approve or reject the Emotion Previz",
+  "next_action": "Review emotion-previz.md, including Set/Camera/Prop/TEMP references and camera candidates, then approve or reject the Emotion Previz",
   "blockers": [],
-  "updated_at": "2026-09-14T16:03:08.831Z"
+  "updated_at": "2026-09-14T16:19:36.499Z"
 }
