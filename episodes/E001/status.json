@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "episode_id": "E001",
-  "current_stage": "EMOTION_PREVIZ_REVIEW",
+  "current_stage": "ASSET_PRODUCTION",
   "owner_role": "STUDIO_PRODUCER",
-  "next_role": "CONTINUITY_SUPERVISOR",
-  "next_action": "Re-review the revised E001 Emotion/Spatial Previz; verify Cuts 5 and 8 use Home View C only and View A is excluded from generation and camera geometry",
+  "next_role": "STUDIO_PRODUCER",
+  "next_action": "Produce E001 image, action-frame, bubble, audio, edit.json, and asset-manifest package strictly from the approved Emotion/Spatial Previz",
   "blockers": [],
-  "updated_at": "2026-09-14T17:11:32.218Z"
+  "updated_at": "2026-09-14T17:15:42.914Z"
 }
