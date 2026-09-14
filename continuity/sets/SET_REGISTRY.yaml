@@ -1,0 +1,102 @@
+schema_version: 1
+registry_updated_at: "2026-09-14"
+
+sets:
+  - set_id: "SET_HOME_001"
+    version: "1.0"
+    name: "몽이의 도담시 소담동 원룸"
+    authority: "canon/Mongi-Home-Lock-V1.0-Final-v3.md"
+    status: "OFFICIAL"
+    mirror_allowed: false
+
+    visual_references:
+      floorplan:
+        file: "Mongi-Home-Floorplan-V1.0-Final-v2.png"
+        role: "절대 평면 구조와 방향 기준"
+      views:
+        - camera_id: "CAM_HOME_A"
+          file: "Mongi-Home-View-A-Final-v2.png"
+        - camera_id: "CAM_HOME_B"
+          file: "Mongi-Home-View-B-Final-v2.png"
+        - camera_id: "CAM_HOME_C"
+          file: "Mongi-Home-View-C-Final-v1.png"
+      environment_sheet:
+        file: null
+        status: "OPTIONAL_FUTURE_ASSET"
+
+    anchors:
+      - id: "ANCHOR_WINDOW_01"
+        lock: "HARD"
+        rule: "현관에서 창문을 볼 때 끝 벽 중앙보다 약간 왼쪽, 정확히 1개"
+      - id: "ANCHOR_ENTRY_DOOR_01"
+        lock: "HARD"
+        rule: "같은 기준 오른쪽 가장자리, 안쪽으로 열림"
+      - id: "ANCHOR_KITCHEN_01"
+        lock: "HARD"
+        rule: "왼쪽 긴 벽의 현관 쪽"
+      - id: "ANCHOR_BED_01"
+        lock: "HARD"
+        rule: "오른쪽 긴 벽 안쪽 절반, 머리는 창문 쪽"
+      - id: "ANCHOR_DESK_01"
+        lock: "HARD"
+        rule: "창문과 평행하되 어느 벽에도 붙지 않는 독립 배치"
+      - id: "ANCHOR_CENTER_PATH_01"
+        lock: "HARD"
+        rule: "현관에서 창가까지 이어지는 생활 통로"
+
+    cameras:
+      - camera_id: "CAM_HOME_A"
+        lock: "HARD"
+        position: "현관 가까이, 주방 앞"
+        facing: "창문 방향"
+        framing: "약간 높은 눈높이의 3/4 와이드숏"
+        visible_rules:
+          must: ["주방", "냉장고", "책상", "침대", "에어컨", "노트북 뒷면"]
+          must_not: ["노트북 화면을 정면으로 표시"]
+      - camera_id: "CAM_HOME_B"
+        lock: "HARD"
+        position: "침대 머리맡·창문 쪽"
+        facing: "현관 방향"
+        framing: "약간 높은 눈높이의 역방향 3/4 와이드숏"
+        visible_rules:
+          must: ["침대 일부", "책상", "노트북 화면", "의자 등받이", "주방", "현관문"]
+          must_not: ["창문을 다른 벽에 생성", "에어컨을 화각에 억지로 추가", "노트북 발바닥 스티커 표시"]
+      - camera_id: "CAM_HOME_C"
+        lock: "HARD"
+        position: "현관 가까이에서 침대 쪽으로 이동"
+        facing: "창문·책상 방향으로 CAM_HOME_A보다 왼쪽 15~20도"
+        framing: "침대가 더 크게 보이는 3/4 전경"
+        visible_rules:
+          must: ["주방", "냉장고", "책상", "침대", "에어컨", "노트북 뒷면"]
+          must_not: ["가구 이동으로 각도 구현"]
+
+    props:
+      - prop_id: "PROP_HOME_BED_001"
+        lock: "HARD"
+        identity: "낮은 흰색 원형 파이프 프레임 싱글침대"
+      - prop_id: "PROP_HOME_DESK_001"
+        lock: "HARD"
+        identity: "밝은 오크 상판과 흰색 금속 다리 책상"
+      - prop_id: "PROP_HOME_CHAIR_001"
+        lock: "HARD"
+        identity: "베이지색 접이식 철제 의자"
+      - prop_id: "PROP_HOME_LAPTOP_001"
+        lock: "HARD"
+        identity: "실버 그레이, 둥근 갈색 발바닥 스티커 정확히 1개, 브랜드 없음"
+      - prop_id: "PROP_HOME_AC_001"
+        lock: "HARD"
+        identity: "오른쪽 긴 벽 침대 위의 누렇게 바랜 소형 벽걸이 에어컨 1대"
+      - prop_id: "PROP_HOME_RUG_001"
+        lock: "HARD"
+        identity: "중앙의 좁고 긴 베이지 직사각형 러그"
+      - prop_id: "PROP_HOME_PLANT_001"
+        lock: "SOFT"
+        identity: "테라코타 화분 1개와 작은 초록 새싹"
+
+    soft_variations:
+      - "낮·밤·날씨와 실내 조명"
+      - "허용 범위 내 계절성 침구·커튼"
+      - "정리 상태와 생활 흔적"
+
+    free_variations:
+      - "컵, 책, 서류, 충전기, 음식, 빨래, 택배 상자 같은 에피소드성 소품"
