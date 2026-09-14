@@ -15,12 +15,10 @@
       "blocking_issues": []
     },
     "previz": {
-      "status": "REJECTED",
-      "reviewer": "Continuity Supervisor (Codex)",
-      "reviewed_at": "2026-09-14T16:31:04.152Z",
-      "blocking_issues": [
-        "episodes/E001/emotion-previz.md — Spatial scope and Cuts 5–8: CAM_CANDIDATE_HOME_BED_PATH_MEDIUM cites CAM_HOME_A/C together without one fixed camera position, facing direction, or frame/visibility bounds. This conflicts with continuity/sets/SPATIAL_CONTINUITY.md, which requires a new camera position and sightline to be defined on the floorplan before asset generation. Required: choose one official camera as the sole geometric anchor; define the E001-only candidate's position, facing, framing, visible directional anchors, and Cut 4→5 screen-direction continuity; retain mirror prohibition and do not register an official reusable Camera ID."
-      ]
+      "status": "PENDING_REVIEW",
+      "reviewer": null,
+      "reviewed_at": null,
+      "blocking_issues": []
     },
     "assets": {
       "status": "NOT_STARTED",
