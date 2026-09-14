@@ -100,3 +100,28 @@ Those fields are production inputs. Keeping `A/C` there conflicts with the sole-
 
 All emotion, timing, Character, Prop/TEMP, mirror prohibition, and corrected camera-geometry content otherwise pass. After this textual consistency correction, return Previz to `PENDING_REVIEW` for final re-review. No assets may be generated before approval.
 
+---
+
+## Re-review 2 — Final decision
+
+- Decision: **APPROVED**
+- Reviewer: Continuity Supervisor (Codex)
+- Reviewed at: 2026-09-14T17:15:42.914Z
+- Reviewed commit: `33d44aeac31adf0f886251511cff22359ae7dbcb`
+- Main / Set Registry baseline: `1e59b4a7790e46cb1e3b2e92477b16d43b3a88ff`
+- Blocking issues: none
+
+### Second-rejection resolution
+
+- Cut 5 Required visual reference now uses **Home View C only**.
+- Cut 8 Required visual reference now uses **Home View C only**.
+- `Mongi-Home-View-C-Final-v1.png` remains the sole generation and camera-geometry baseline for Cuts 1–8.
+- View A is explicitly limited to non-camera structural cross-checking and prohibited as a generation/geometric reference for Cuts 5–8.
+- `CAM_CANDIDATE_HOME_BED_MEDIUM` and `CAM_CANDIDATE_HOME_BED_PATH_MEDIUM` remain E001-only candidates and are not registered as official reusable Camera IDs.
+
+### Final gate assessment
+
+All prior blocking issues are resolved. Emotion progression, Character acting, silent bubble readability, timing, Set/Prop/TEMP references, bed/path screen direction, locked Cuts 5–8 geometry, and mirror prohibition are sufficiently defined for production.
+
+`PREVIZ_APPROVED` is granted. Studio Producer may begin E001 asset production strictly from this approved Previz. Generated assets must preserve `SET_HOME_001@1.0`, the E001-only Camera Candidate geometry, Home View C generation baseline, Prop/TEMP continuity, and no-mirror rule. Asset review remains required before rendering.
+
