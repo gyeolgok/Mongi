@@ -4,7 +4,7 @@
   "current_stage": "BRIEF",
   "owner_role": "CHANNEL_OPERATIONS",
   "next_role": "OWNER_SHOWRUNNER",
-  "next_action": "Review the E001 brief draft and approve, reject, or request changes",
+  "next_action": "Review the revised E001 brief and explicitly approve, reject, or request further changes",
   "blockers": [],
-  "updated_at": "2026-09-14T13:37:36Z"
+  "updated_at": "2026-09-14T13:48:00Z"
 }
