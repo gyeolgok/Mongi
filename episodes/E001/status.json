@@ -1,12 +1,10 @@
 {
   "schema_version": 1,
   "episode_id": "E001",
-  "current_stage": "EMOTION_PREVIZ_REVISION",
+  "current_stage": "EMOTION_PREVIZ_REVIEW",
   "owner_role": "STUDIO_PRODUCER",
-  "next_role": "STUDIO_PRODUCER",
-  "next_action": "Remove the stale Home View A/C references from Cuts 5 and 8, keep CAM_HOME_C as the sole cut-level camera baseline, then resubmit Previz",
-  "blockers": [
-    "episodes/E001/emotion-previz.md — Cuts 5 and 8, Required visual reference: stale 'Home View A/C' text remains, conflicting with the revised sole geometric/view baseline CAM_HOME_C / Mongi-Home-View-C-Final-v1.png. Required: remove the A/C wording from those two cut-level required-reference cells and identify Home View C only. The official reference map may retain View A solely as a non-camera structural cross-check if explicitly labeled as such; it must not act as a geometric or generation reference for these cuts. Keep both Camera Candidates E001-only and do not register them."
-  ],
-  "updated_at": "2026-09-14T17:06:18.828Z"
+  "next_role": "CONTINUITY_SUPERVISOR",
+  "next_action": "Re-review the revised E001 Emotion/Spatial Previz; verify Cuts 5 and 8 use Home View C only and View A is excluded from generation and camera geometry",
+  "blockers": [],
+  "updated_at": "2026-09-14T17:11:32.218Z"
 }
