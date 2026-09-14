@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "episode_id": "E001",
+  "approvals": {
+    "brief": {
+      "status": "APPROVED",
+      "reviewer": "ㅎ (Owner/Showrunner)",
+      "reviewed_at": "2026-09-14T13:56:36Z",
+      "blocking_issues": []
+    },
+    "script": {
+      "status": "APPROVED",
+      "reviewer": "Continuity Supervisor (Codex)",
+      "reviewed_at": "2026-09-14T14:05:04.936Z",
+      "blocking_issues": []
+    },
+    "previz": {
+      "status": "NOT_STARTED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "blocking_issues": []
+    },
+    "assets": {
+      "status": "NOT_STARTED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "blocking_issues": []
+    },
+    "render": {
+      "status": "NOT_STARTED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "blocking_issues": []
+    },
+    "final": {
+      "status": "NOT_STARTED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "blocking_issues": []
+    }
+  },
+  "override": {
+    "approved_by_owner": false,
+    "reason": null,
+    "approved_at": null,
+    "scope": null
+  }
+}

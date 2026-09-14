@@ -15,7 +15,7 @@ mongi:
   dream_symbol: "1층 작은 가게와 2층 집"
 production:
   latest_official_episode: null
-  active_episodes: []
-  next_episode_id: "E001"
+  active_episodes:
+    - "E001"
+  next_episode_id: "E002"
 open_decisions: []
-
