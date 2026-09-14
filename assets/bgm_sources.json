@@ -1,0 +1,78 @@
+{
+  "version": "1.4",
+  "tracks": [
+    {
+      "key": "DAILY_MIZUTAMA",
+      "title": "Mizutama",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm261/",
+      "role": "main everyday"
+    },
+    {
+      "key": "DAILY_PATCHWORK",
+      "title": "Patchwork",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm278/",
+      "role": "warm playful everyday"
+    },
+    {
+      "key": "DAILY_PRELUDE",
+      "title": "Prelude",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm279/",
+      "role": "clear calm everyday / morning / work"
+    },
+    {
+      "key": "CHILL_LINEN",
+      "title": "Linen",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm256/",
+      "role": "slow relaxed everyday; not laziness"
+    },
+    {
+      "key": "EXCITED_APRICOT_COLOR",
+      "title": "Apricot Color",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm257/",
+      "role": "excited / discovery / shopping"
+    },
+    {
+      "key": "HAPPY_PETIT_GIFT",
+      "title": "Petit Gift",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm237/",
+      "role": "small happy event / outing / opening"
+    },
+    {
+      "key": "CITY_PARALLAX_CITY",
+      "title": "Parallax City",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm184/",
+      "role": "city / cafe / shopping / outing"
+    },
+    {
+      "key": "GLOOMY_VINYL_PIANO",
+      "title": "Vinyl Piano",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm173/",
+      "role": "reality check / quiet disappointment"
+    },
+    {
+      "key": "PLAYFUL_8WORLD",
+      "title": "8world",
+      "source": "bgmusic.jp",
+      "page": "https://bgmusic.jp/freebgm/bgm182/",
+      "role": "special game/fantasy/calculation gag only"
+    },
+    {
+      "key": "INNER_MONOLOGUE_QUIET_NIGHT",
+      "title": "静かな夜長に",
+      "source": "DOVA-SYNDROME",
+      "page": "https://dova-s.jp/bgm/detail/19572.html",
+      "role": "quiet inner monologue after emotion; not a quote/lesson cue"
+    }
+  ],
+  "unassigned": {
+    "EMOTIONAL_PEAK": "Reserved; no track locked yet."
+  }
+}

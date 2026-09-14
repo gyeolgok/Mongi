@@ -1,0 +1,5 @@
+Mongi Renderer V1.6.4
+- locks official Audio V1 logical key: light-click
+- adds CURSOR_CLICK/light-click sync warning in Preflight
+- adds Edit Lock V1.7.1 and Audio Library documentation
+- does not bundle the audio file; user supplies assets/sfx/light-click.*

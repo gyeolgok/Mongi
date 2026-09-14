@@ -1,0 +1,87 @@
+{
+  "notes": "Mongi Audio Library V1.3. Bongbongmusic files are user-installed from the creator's original distribution and are not redistributed in the Renderer package.",
+  "sfx": [
+    {
+      "name": "click.wav",
+      "source": "project-original; designed around common short-form editing cues (soft pop/whoosh/chime/impact/foley)",
+      "license": "project-original"
+    },
+    {
+      "name": "heartbeat.wav",
+      "source": "project-original; designed around common short-form editing cues (soft pop/whoosh/chime/impact/foley)",
+      "license": "project-original"
+    },
+    {
+      "name": "notification.wav",
+      "source": "project-original; designed around common short-form editing cues (soft pop/whoosh/chime/impact/foley)",
+      "license": "project-original"
+    }
+  ],
+  "bgm": [
+    {
+      "name": "AWKWARD.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    },
+    {
+      "name": "DAILY.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    },
+    {
+      "name": "EXCITED.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    },
+    {
+      "name": "GLOOMY.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    },
+    {
+      "name": "LAZY.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    },
+    {
+      "name": "WARM.mp3",
+      "source": "project-original; original melody/arrangement for Mongi",
+      "license": "project-original"
+    }
+  ],
+  "external_sfx_library": {
+    "name": "봉봉뮤직 귀여운효과음,모션SOUND",
+    "source_video": "https://youtu.be/BlmezHTpyfA",
+    "distribution": "Bundled in this private project package at user request; do not redistribute/sell Renderer package without rechecking creator terms.",
+    "usage": "May be used as BGM/SFX in personal videos per creator description; free use requires creator info and source video link in the post/video description",
+    "install": "Preinstalled in V1.3.1 integrated package",
+    "logical_mapping": {
+      "1": "cute_move_01",
+      "2": "blink_bubble",
+      "3": "blink_bubble_double",
+      "4": "move_soft",
+      "5": "comic_step",
+      "6": "slow_step",
+      "7": "cute_move",
+      "8": "cartoon_move",
+      "9": "cartoon_boing",
+      "10": "cartoon_wild_move",
+      "11": "cartoon_down_move",
+      "12": "cartoon_up_move",
+      "13": "moving",
+      "14": "rolling",
+      "15": "reveal_01",
+      "16": "reveal_02",
+      "17": "anim_move_01",
+      "18": "anim_move_02",
+      "19": "anim_down",
+      "20": "anim_action_01",
+      "21": "anim_action_02",
+      "22": "anim_action_03",
+      "23": "anim_action_04",
+      "24": "anim_action_05",
+      "25": "anim_action_06",
+      "26": "anim_action_07"
+    }
+  }
+}

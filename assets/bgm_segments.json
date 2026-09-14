@@ -1,0 +1,17 @@
+{
+  "version": "1.5",
+  "policy": "BGM is not assumed to start at 0:00. Production chooses a recommended source segment and writes source_start into edit.json.",
+  "tracks": {
+    "DAILY_MIZUTAMA": {"default_source_start": 45.0, "segments": [{"start":45.0,"end":70.0,"role":"cute active daily"},{"start":100.0,"end":125.0,"role":"balanced daily"},{"start":150.0,"end":175.0,"role":"steady daily"}]},
+    "DAILY_PATCHWORK": {"default_source_start": 20.0, "segments": [{"start":20.0,"end":45.0,"role":"warm playful daily"},{"start":80.0,"end":105.0,"role":"lighter daily"},{"start":150.0,"end":175.0,"role":"active daily"}]},
+    "DAILY_PRELUDE": {"default_source_start": 35.0, "segments": [{"start":35.0,"end":60.0,"role":"clear calm daily"},{"start":80.0,"end":105.0,"role":"work/study daily"},{"start":110.0,"end":135.0,"role":"slightly lifted daily"}]},
+    "CHILL_LINEN": {"default_source_start": 85.0, "segments": [{"start":15.0,"end":35.0,"role":"quiet room"},{"start":85.0,"end":110.0,"role":"relaxed daily"},{"start":150.0,"end":175.0,"role":"slow afternoon"}]},
+    "EXCITED_APRICOT_COLOR": {"default_source_start": 25.0, "segments": [{"start":25.0,"end":45.0,"role":"discovery/excitement"},{"start":55.0,"end":75.0,"role":"high cute energy"},{"start":115.0,"end":135.0,"role":"bright event"}]},
+    "HAPPY_PETIT_GIFT": {"default_source_start": 35.0, "segments": [{"start":35.0,"end":55.0,"role":"small happy event"},{"start":105.0,"end":125.0,"role":"outing/opening"},{"start":165.0,"end":185.0,"role":"happy wrap-up"}]},
+    "CITY_PARALLAX_CITY": {"default_source_start": 15.0, "segments": [{"start":15.0,"end":40.0,"role":"city/cafe"},{"start":75.0,"end":100.0,"role":"shopping/outing"},{"start":145.0,"end":170.0,"role":"city montage"}]},
+    "GLOOMY_VINYL_PIANO": {"default_source_start": 20.0, "segments": [{"start":20.0,"end":40.0,"role":"quiet disappointment"},{"start":60.0,"end":80.0,"role":"reality check"},{"start":110.0,"end":130.0,"role":"late-night reflection"}]},
+    "PLAYFUL_8WORLD": {"default_source_start": 75.0, "segments": [{"start":15.0,"end":35.0,"role":"game gag"},{"start":75.0,"end":95.0,"role":"calculation/fantasy gag"},{"start":145.0,"end":165.0,"role":"special playful montage"}]},
+    "INNER_MONOLOGUE_QUIET_NIGHT": {"default_source_start": 60.0, "segments": [{"start":20.0,"end":40.0,"role":"soft inner thought"},{"start":60.0,"end":80.0,"role":"inner monologue default"},{"start":85.0,"end":105.0,"role":"slightly fuller reflection"}]},
+    "EMOTIONAL_LONGING_CANDIDATE": {"status":"candidate_not_locked", "segments": [{"start":55.0,"end":80.0,"role":"emotional rise candidate"},{"start":70.0,"end":95.0,"role":"strongest rise candidate"},{"start":105.0,"end":125.0,"role":"late emotional candidate"}]}
+  }
+}

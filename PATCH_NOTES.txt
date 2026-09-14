@@ -1,0 +1,30 @@
+Mongi Renderer V1.6.1 APP PATCH
+
+Install
+1. Close Renderer if running.
+2. Copy this patch's app/ folder over the existing MongiRenderer_V1_6/app/ folder.
+3. Allow overwrite.
+4. Run render.bat again.
+
+Fixes
+- P0: ZOOM_IN_SLOW / ZOOM_OUT_SLOW center jitter fix.
+  * Camera center is kept on a stable even-pixel grid to prevent 1px oscillation.
+- Cache schema bumped so old jittery cached cuts are NOT reused after patch.
+- Text boxes now visually center Korean text vertically using glyph bounds.
+- Text default alignment is centered; align:left/right remains available.
+- TYPEWRITER text animation support added.
+  * animation: "TYPEWRITER"
+  * chars_per_second: 12 (default)
+- SFX timing offset support added.
+  * offset: negative/positive seconds relative to declared at/start.
+  * Example: {"name":"...","at":0.0,"offset":-0.2}
+- SFX source_start support fixed, including interval-SFX bug.
+- Millisecond delay rounding cleaned up.
+- Renderer console version updated to V1.6.1.
+
+Not automatic / production responsibility
+- Perspective matching of UI to a tilted laptop screen.
+- Mouse path/action frames and button label presence.
+- Choosing/replacing the actual click SFX asset.
+- Musical phrase selection and final-cut duration. Renderer supports source_start/fades,
+  but the production package must specify the intended phrase/timing.
