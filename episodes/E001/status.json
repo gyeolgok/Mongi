@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "episode_id": "E001",
-  "current_stage": "EMOTION_PREVIZ",
+  "current_stage": "EMOTION_PREVIZ_REVIEW",
   "owner_role": "STUDIO_PRODUCER",
-  "next_role": "STUDIO_PRODUCER",
-  "next_action": "Create emotion-previz.md from the approved script and submit it for continuity review",
+  "next_role": "CONTINUITY_SUPERVISOR",
+  "next_action": "Review emotion-previz.md and approve or reject the Emotion Previz",
   "blockers": [],
-  "updated_at": "2026-09-14T14:05:04.936Z"
+  "updated_at": "2026-09-14T16:03:08.831Z"
 }
