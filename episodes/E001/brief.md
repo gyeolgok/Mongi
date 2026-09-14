@@ -9,7 +9,10 @@
 - Intended aftertaste: 아침부터 완벽할 필요는 없으며 작은 시작도 충분하다는 가벼운 위로
 - Required setting/location: 도담시 소담동 몽이의 원룸, 기존 침대 공간
 - Continuity impact: none
-- Owner decisions needed: none
+- Owner decisions needed:
+  1. 아침 외출 목적을 공개하지 않을지, 알바·등교·면접 중 하나로 특정할지
+  2. 마지막 메시지 문구를 현재 안으로 확정할지
+  3. 25–30초 길이와 출근 시간대 우선 게시 방향을 유지할지
 
 ## Channel and format
 
@@ -35,6 +38,6 @@
 - 알람 화면과 기상 동작 컷은 에피소드 신규 자산으로 제작한다.
 - 신규 고정 설정, 장소 또는 조연은 만들지 않는다.
 
-## Owner direction
+## Owner selection record
 
-ㅎ님이 2026-09-14에 제안 후보 1번을 E001 소재로 명시적으로 선택했다. 이 Brief는 대본 작성의 승인 입력물로 사용한다.
+ㅎ님이 2026-09-14에 제안 후보 1번을 E001 소재로 선택했다. 이는 소재 선택 기록이며 Brief 승인 기록이 아니다. 본 문서는 Owner 검토 전 초안이고, 승인될 때까지 대본 작성의 승인 입력물로 사용하지 않는다.
