@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "episode_id": "E001",
-  "current_stage": "BRIEF",
-  "owner_role": "CHANNEL_OPERATIONS",
-  "next_role": "OWNER_SHOWRUNNER",
-  "next_action": "Review the revised E001 brief and explicitly approve, reject, or request further changes",
+  "current_stage": "SCRIPT_REVIEW",
+  "owner_role": "STORY_WRITER",
+  "next_role": "CONTINUITY_SUPERVISOR",
+  "next_action": "Review script.md against the approved brief and relevant Locks",
   "blockers": [],
-  "updated_at": "2026-09-14T13:48:00Z"
+  "updated_at": "2026-09-14T13:56:36Z"
 }
