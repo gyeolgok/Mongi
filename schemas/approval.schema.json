@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mongi Episode Approval",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "approvals", "override"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "episode_id": {"type": "string", "pattern": "^E[0-9]{3,}$"},
+    "approvals": {
+      "type": "object",
+      "required": ["brief", "script", "assets", "render", "final"],
+      "additionalProperties": false,
+      "properties": {
+        "brief": {"$ref": "#/$defs/gate"},
+        "script": {"$ref": "#/$defs/gate"},
+        "assets": {"$ref": "#/$defs/gate"},
+        "render": {"$ref": "#/$defs/gate"},
+        "final": {"$ref": "#/$defs/gate"}
+      }
+    },
+    "override": {
+      "type": "object",
+      "required": ["approved_by_owner"],
+      "properties": {
+        "approved_by_owner": {"type": "boolean"},
+        "reason": {"type": ["string", "null"]},
+        "approved_at": {"type": ["string", "null"]},
+        "scope": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "required": ["status", "reviewer", "reviewed_at", "blocking_issues"],
+      "properties": {
+        "status": {"enum": ["NOT_STARTED", "IN_PROGRESS", "PENDING_REVIEW", "APPROVED", "REJECTED", "BLOCKED"]},
+        "reviewer": {"type": ["string", "null"]},
+        "reviewed_at": {"type": ["string", "null"]},
+        "blocking_issues": {"type": "array", "items": {"type": ["string", "object"]}}
+      }
+    }
+  }
+}
+

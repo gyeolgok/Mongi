@@ -10,7 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 REQ = ROOT / "app" / "requirements.txt"
 DOCS = ROOT / "docs"
 LOCK_GLOB = "Mongi-Shorts-Edit-Lock-V*.md"
-LOCK_RE = re.compile(r"^Mongi-Shorts-Edit-Lock-V(\d+(?:\.\d+)*)\.md$", re.IGNORECASE)
+LOCK_RE = re.compile(
+    r"^Mongi-Shorts-Edit-Lock-V(\d+(?:\.\d+)*)(?:-[^.]+)?\.md$",
+    re.IGNORECASE,
+)
 
 
 def _install_requirements() -> bool:
@@ -47,7 +50,7 @@ def _find_latest_edit_lock():
 
 
 def main() -> int:
-    print("Mongi Renderer V1.6.9 - Startup Check")
+    print("Mongi Renderer V1.7.0 - Startup Check")
 
     if importlib.util.find_spec("PIL") is None:
         if not _install_requirements() or importlib.util.find_spec("PIL") is None:

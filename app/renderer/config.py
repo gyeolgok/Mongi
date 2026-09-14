@@ -13,14 +13,14 @@ SUPPORTED_CAMERA = {
     "PUNCH_ZOOM", "SHAKE_LIGHT",
 }
 SUPPORTED_TRANSITIONS = {"CUT", "CROSSFADE", "FADE_IN", "FADE_OUT", "FLASH"}
-SUPPORTED_TEXT_TYPES = {"situation_label", "dialogue", "thought", "caption", "ui", "end_message"}
+# Edit Lock V1.9: dialogue/thought bubbles and their text are baked into the
+# source image. The Renderer only composites the post-production roles below.
+SUPPORTED_TEXT_TYPES = {"situation_label", "caption", "ui", "end_message"}
 SUPPORTED_ACTION_TYPES = {"IMAGE_SWAP", "IMAGE_SEQUENCE", "CURSOR_MOVE", "CURSOR_CLICK"}
 SUPPORTED_ACTION_TRANSITIONS = {"CUT", "CROSSFADE"}
 DEFAULT_TRANSITION_DURATION = 0.22
 DEFAULT_FONT_SIZE = {
     "situation_label": 44,
-    "dialogue": 58,
-    "thought": 56,
     "caption": 50,
     "ui": 44,
     "end_message": 52,

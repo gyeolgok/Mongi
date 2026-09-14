@@ -1,13 +1,17 @@
-# edit.json V1 Reference
+# edit.json V1.9 Reference
 
-This renderer follows `Mongi Shorts Edit Lock V1.0`.
+최종 권위 문서는 `Mongi-Shorts-Edit-Lock-V1.9-Consolidated.md`다. 이 문서는 Renderer 입력 형식을 빠르게 확인하기 위한 요약이다.
+
+## 패키지 승인
+
+ZIP 루트에 `approval.json`이 필요하다. `episode_id`는 `edit.json`의 `project.id`와 일치해야 하며, 렌더 전 `script`와 `assets`가 승인되어야 한다. 전체 형식은 `episodes/_template/approval.json`을 사용한다.
 
 ## Project
 
 ```json
 {
   "project": {
-    "id": "E03",
+    "id": "E001",
     "title": "Episode title",
     "format": "shorts",
     "resolution": {"width": 1080, "height": 1920},
@@ -18,7 +22,7 @@ This renderer follows `Mongi Shorts Edit Lock V1.0`.
 
 ## Cut
 
-Required: `id`, `image`, `duration`.
+필수 필드는 `id`, `image`, `duration`이다.
 
 ```json
 {
@@ -33,99 +37,52 @@ Required: `id`, `image`, `duration`.
 }
 ```
 
-Camera presets: `STATIC`, `ZOOM_IN_SLOW`, `ZOOM_OUT_SLOW`, `PAN_LEFT`, `PAN_RIGHT`, `PAN_UP`, `PAN_DOWN`, `PUNCH_ZOOM`, `SHAKE_LIGHT`.
+Camera: `STATIC`, `ZOOM_IN_SLOW`, `ZOOM_OUT_SLOW`, `PAN_LEFT`, `PAN_RIGHT`, `PAN_UP`, `PAN_DOWN`, `PUNCH_ZOOM`, `SHAKE_LIGHT`.
 
-## Text
+## Renderer 후합성 Text
 
-Types: `situation_label`, `dialogue`, `thought`, `caption`, `ui`.
+허용 타입은 `situation_label`, `caption`, `ui`, `end_message`다.
 
-```json
-{
-  "type": "dialogue",
-  "text": "오늘은 진짜 하나라도 지원하자.",
-  "position": "TOP_RIGHT",
-  "x": 320,
-  "y": 160,
-  "width": 650,
-  "appear_at": 0.3,
-  "disappear_at": null,
-  "animation": "POP_SOFT"
-}
-```
+`dialogue`와 `thought`는 이미지 안에 말풍선과 문구를 완성해야 하며 `text` 배열에 넣으면 Preflight가 거부한다. `TYPEWRITER`도 V1.9에서 거부한다.
 
-If `x/y` are omitted, semantic positions are used. Current semantic positions: `TOP_LEFT`, `TOP_RIGHT`, `BOTTOM_LEFT`, `BOTTOM_RIGHT`, `CENTER`, `ABOVE_CHARACTER`.
+## Actions
 
-The renderer uses a project font from `assets/fonts/` first. The font file is not redistributed by this project. If no project font exists, a system Korean font is used as fallback.
+- `IMAGE_SWAP`
+- `IMAGE_SEQUENCE`
+- `CURSOR_MOVE`
+- `CURSOR_CLICK`
 
-## IMAGE_SWAP
+이미지 액션끼리는 겹치지 않는다. Cursor 액션은 이미지 액션과 함께 사용할 수 있다.
+
+## UI Click SFX
+
+일반 UI 클릭의 공식 논리 키는 `light-click`이다. `CURSOR_CLICK`은 소리를 자동 생성하지 않으므로 필요한 경우 같은 시각에 SFX를 명시한다.
 
 ```json
 {
-  "type": "IMAGE_SWAP",
-  "at": 1.2,
-  "image": "actions/cut05_blink.png",
-  "duration": 0.18,
-  "return_to_base": true,
-  "transition": "CUT"
+  "actions": [{"type": "CURSOR_CLICK", "at": 0.95, "position": [710, 980], "duration": 0.16}],
+  "sfx": [{"name": "light-click", "at": 0.95, "volume": 0.75}]
 }
 ```
 
-`transition` supports `CUT` and `CROSSFADE`.
+## End Card
 
-## IMAGE_SEQUENCE
+마지막 컷이어야 하며 `STATIC` 카메라, 비어 있지 않은 `end_message`, 빈 `actions`가 필요하다.
 
 ```json
 {
-  "type": "IMAGE_SEQUENCE",
-  "at": 1.0,
-  "frames": [
-    {"image": "actions/tail_left.png", "duration": 0.12},
-    {"image": "actions/tail_right.png", "duration": 0.12}
-  ],
-  "repeat": 2,
-  "return_to_base": true
+  "id": "end_card",
+  "type": "end_card",
+  "image": "images/end_card.png",
+  "duration": 2.8,
+  "camera": {"preset": "STATIC"},
+  "text": [{"type": "end_message", "text": "오늘은 여기까지.", "appear_at": 0.2, "animation": "STATIC"}],
+  "actions": [],
+  "sfx": [],
+  "transition_out": {"type": "FADE_OUT"}
 }
 ```
-
-Overlapping actions are rejected in V1 so timing stays deterministic.
-
-## SFX
-
-Instant:
-
-```json
-{"name":"notification","at":1.2,"volume":1.0,"duck_bgm":true}
-```
-
-Interval:
-
-```json
-{"name":"heartbeat","start":0.8,"end":2.4,"volume":0.8}
-```
-
-Files are resolved from `assets/sfx/<name>.*`. Missing optional audio produces a warning and is skipped.
-
-## BGM
-
-```json
-{
-  "name":"daily",
-  "start":0.0,
-  "end":18.6,
-  "volume":1.0,
-  "fade_in":0.4,
-  "fade_out":0.6
-}
-```
-
-Files are resolved from `assets/bgm/<name>.*`. Short BGM files are looped to fill the requested interval.
-
-## Transitions
-
-`CUT`, `CROSSFADE`, `FADE_IN`, `FADE_OUT`, `FLASH`.
-
-`CROSSFADE` preserves the sum of cut durations by padding the outgoing boundary before blending. This keeps the Edit Lock rule that total runtime is determined by cut durations.
 
 ## Cache
 
-Each cut is hashed from its JSON, project render settings and referenced image metadata. Unchanged cuts reuse cached MP4s automatically. `--force` disables reuse for that run.
+각 컷은 JSON, 프로젝트 설정과 참조 이미지 메타데이터로 해시된다. `--force`는 캐시를 무시한다.
